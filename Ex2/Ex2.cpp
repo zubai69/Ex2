@@ -83,7 +83,7 @@ void tab() {
             std::cout <<"x="<< x << "  y=" << y << std::endl;
         }
         else {
-            std::cout << "Нельзя вычислить" << std::endl;
+            std::cout << "x=1  Нельзя вычислить" << std::endl;
         }
     }
 }
