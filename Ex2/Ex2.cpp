@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <math.h>
 
 void konus() {
     double r, h, l, R;
@@ -10,12 +9,16 @@ void konus() {
     std::cin >> r;
     std::cout << "Введите высоту:\n";
     std::cin >> h;
-    std::cout << "Введите длину образующей:\n";
-    std::cin >> l;
-    double S = pi * (R * R + (R + r) * l + r * r);
-    double V = pi * h * (R * R + r * R + r * r)/3;
-    std::cout << "Объем усеченного конуса:\n" << V << std::endl;
-    std::cout << "Площадь усеченного конуса:\n" << S << std::endl;
+    if (R <= 0 || r <= 0 || h <= 0) {
+        std::cout << "Неверные данные";
+    }
+    else {
+        l = sqrt((R - r) * (R - r) + h * h);
+        double S = pi * (R * R + (R + r) * l + r * r);
+        double V = pi * h * (R * R + r * R + r * r) / 3;
+        std::cout << "Объем усеченного конуса:\n" << V << std::endl;
+        std::cout << "Площадь усеченного конуса:\n" << S << std::endl;
+    }
 }
 
 void razv() {
@@ -61,10 +64,15 @@ void por() {
     int n;
     std::cout << "Введите N:" << std::endl;
     std::cin >> n;
-    int i = 0;
-    while (i < 10) {
-        std::cout << n + i << std::endl;
-        i += 1;
+    if (n <= 0) {
+        std::cout << "N не натуральное";
+    }
+    else {
+        int i = 0;
+        while (i < 10) {
+            std::cout << n + i << std::endl;
+            i += 1;
+        }
     }
 }
 
@@ -72,7 +80,7 @@ void tab() {
     for (double x = -4; x <= 4; x += 0.5) {
         if (x != 1) {
             double y = (x * x - 2 * x + 2) / (x - 1);
-            std::cout << y << std::endl;
+            std::cout <<"x="<< x << "  y=" << y << std::endl;
         }
         else {
             std::cout << "Нельзя вычислить" << std::endl;
