@@ -1,21 +1,21 @@
-﻿#include <iostream>
+﻿#define _USE_MATH_DEFINES
+#include <iostream>
 
 void konus() {
     double r, h, l, R;
-    const double pi = 3.1415;
     std::cout << "Введите радиус основания:\n";
     std::cin >> R;
     std::cout << "Введите радиус усеченной окружности:\n";
     std::cin >> r;
     std::cout << "Введите высоту:\n";
     std::cin >> h;
-    if (R <= 0 || r <= 0 || h <= 0) {
+    if (R <= 0 || r <= 0 || h <= 0 || r==R) {
         std::cout << "Неверные данные";
     }
     else {
         l = sqrt((R - r) * (R - r) + h * h);
-        double S = pi * (R * R + (R + r) * l + r * r);
-        double V = pi * h * (R * R + r * R + r * r) / 3;
+        double S = M_PI * (R * R + (R + r) * l + r * r);
+        double V = M_PI * h * (R * R + r * R + r * r) / 3;
         std::cout << "Объем усеченного конуса:\n" << V << std::endl;
         std::cout << "Площадь усеченного конуса:\n" << S << std::endl;
     }
@@ -90,6 +90,6 @@ void tab() {
 
 int main() {
     setlocale(LC_ALL, "");
-    tab();
+    konus();
     return 0;
 }
