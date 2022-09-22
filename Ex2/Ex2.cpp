@@ -15,7 +15,7 @@ void konus() {
     else {
         l = sqrt((R - r) * (R - r) + h * h);
         double S = M_PI * (R * R + (R + r) * l + r * r);
-        double V = M_PI * h * (R * R + r * R + r * r) / 3;
+        double V = M_PI * h * (R * R + r * R + r * r) / 3.0;
         std::cout << "Объем усеченного конуса:\n" << V << std::endl;
         std::cout << "Площадь усеченного конуса:\n" << S << std::endl;
     }
@@ -80,16 +80,15 @@ void tab() {
     for (double x = -4; x <= 4; x += 0.5) {
         if (x != 1) {
             double y = (x * x - 2 * x + 2) / (x - 1);
-            std::cout <<"x="<< x << "  y=" << y << std::endl;
+            std::cout <<"x="<< x << "\t  y=" << y << std::endl;
         }
         else {
-            std::cout << "x=1  Нельзя вычислить" << std::endl;
+            std::cout << "x=1\t  Нельзя вычислить" << std::endl;
         }
     }
 }
 
 int main() {
-    setlocale(LC_ALL, "");
-    konus();
+    setlocale(LC_ALL, "Russian");
     return 0;
 }
